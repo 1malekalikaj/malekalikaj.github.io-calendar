@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body, html {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(45deg, black, rgb(0, 140, 255));
+}
+
+.calendar-container {
+  width: 90%;
+  max-width: 1200px;
+  background: #e0f7fa;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header button.arrow {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  margin: 0 10px;
+  color: #333;
+  perspective: 1000px;
+  position: relative;
+}
+
+.header button.arrow::before {
+  content: attr(data-content);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateZ(-10px);
+  opacity: 0.6;
+}
+
+.header button.arrow:hover {
+  transform: rotateX(20deg) rotateY(20deg);
+}
+
+.header span {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+th, td {
+  width: 14.28%;
+  height: 80px;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid #80deea;
+  cursor: pointer;
+}
+
+th {
+  background: #b2ebf2;
+}
+
+td:hover {
+  background: #b2ebf2;
+}
+
+.current-day {
+  background: orange;
+  color: white;
+}
